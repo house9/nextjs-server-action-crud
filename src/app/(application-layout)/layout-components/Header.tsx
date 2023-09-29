@@ -11,7 +11,7 @@ export const Header = () => {
             href="#"
             aria-label="Brand"
           >
-            Brand
+            App
           </a>
         </div>
 
