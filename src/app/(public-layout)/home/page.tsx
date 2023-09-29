@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeIcon } from "lucide-react";
 
 export default function Home() {
   console.log("  render: Home: app/(public-layout)/home/page.tsx");
@@ -27,11 +28,7 @@ export default function Home() {
             <div className="lg:col-span-4">
               {/* <!-- Blockquote --> */}
               <blockquote>
-                <img
-                  className="h-12 w-12 rounded-full"
-                  src="sunder-muthukumaran-fd6K_OFlnRA-unsplash-small.jpg"
-                  alt="Image Description"
-                />
+                <HomeIcon />
 
                 <p className="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal dark:text-gray-200">
                   Aut similique magnam quia suscipit non quisquam eos veritatis.
@@ -54,7 +51,7 @@ export default function Home() {
                         href="/dashboard"
                         className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
                       >
-                        Enter
+                        Enter App
                       </Link>
                     </div>
                   </div>
