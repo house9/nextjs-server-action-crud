@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
     "next": "latest",
     "preline": "^1.9.0",
     "react": "latest",
