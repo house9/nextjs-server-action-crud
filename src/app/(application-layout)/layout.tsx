@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Header } from "./components/Header";
-import { Sidebar } from "./components/Sidebar";
+import { Header } from "./layout-components/Header";
+import { Sidebar } from "./layout-components/Sidebar";
 
 export const metadata: Metadata = {
   title: "App",
