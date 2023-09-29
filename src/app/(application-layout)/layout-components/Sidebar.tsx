@@ -97,20 +97,20 @@ export const Sidebar = () => {
           <ul className="space-y-1.5">
             <NavItem
               href="/dashboard"
-              kind={path.includes("/dashboard") ? "active" : "default"}
+              state={path.includes("/dashboard") ? "active" : "default"}
               icon={<Home />}
               title="Dashboard"
             />
             <NavItem
               href="/bands"
               title="Bands"
-              kind={path.includes("/bands") ? "active" : "default"}
+              state={path.includes("/bands") ? "active" : "default"}
               icon={<Users2 />}
             />
             <NavItem
               href="/"
               title="Leave App"
-              kind="default"
+              state="default"
               icon={<ArrowLeftToLine />}
             />
           </ul>

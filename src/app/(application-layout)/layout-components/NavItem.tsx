@@ -5,13 +5,13 @@ const variants = cva(
   "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white",
   {
     variants: {
-      kind: {
+      state: {
         default: "",
         active: "bg-gray-100",
       },
     },
     defaultVariants: {
-      kind: "default",
+      state: "default",
     },
   }
 );
@@ -24,12 +24,12 @@ interface NavItemProps extends VarientType {
   title: string;
 }
 
-export const NavItem = ({ href, icon, title, kind }: NavItemProps) => {
-  console.log(`   render: NavItem: ${title} - ${kind}`);
+export const NavItem = ({ href, icon, title, state }: NavItemProps) => {
+  console.log(`   render: NavItem: ${title} - ${state}`);
 
   return (
     <li>
-      <Link href={href} className={variants({ kind })}>
+      <Link href={href} className={variants({ state })}>
         {icon}
         {title}
       </Link>
