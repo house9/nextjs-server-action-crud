@@ -13,7 +13,7 @@ const createSchema = z.object({
     .nonempty({ message: "Name is required" }),
 });
 
-export async function createBand(params: FormData) {
+export async function createBand(_prevState: any, params: FormData) {
   const { success, error, data } = safeParse(createSchema, params);
   console.log("  createBand", { success, error, data });
 
