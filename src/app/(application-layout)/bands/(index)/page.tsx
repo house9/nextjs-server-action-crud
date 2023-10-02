@@ -6,7 +6,10 @@ export default async function Page() {
     "   render: Bands: app/(application-layout)/bands/(index)/page.tsx"
   );
 
-  const bands = await prisma.band.findMany({ orderBy: { name: "asc" } });
+  const bands = await prisma.band.findMany({
+    include: { _count: { select: { albums: true } } },
+    orderBy: { name: "asc" },
+  });
 
   return (
     <>
