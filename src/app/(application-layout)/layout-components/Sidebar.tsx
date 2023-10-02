@@ -7,10 +7,10 @@ import { Home, ArrowLeftToLine, Users2 } from "lucide-react";
 export const Sidebar = () => {
   const path = usePathname();
 
-  console.log(
-    "Sidebar: app/(application-layout)/layout-components/Sidebar.tsx",
-    path
-  );
+  // console.log(
+  //   "Sidebar: app/(application-layout)/layout-components/Sidebar.tsx",
+  //   path
+  // );
 
   return (
     <>

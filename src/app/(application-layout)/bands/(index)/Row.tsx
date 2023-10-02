@@ -5,7 +5,7 @@ type BandWithCount = Band & { _count: { albums: number } };
 type Props = { band: BandWithCount };
 
 export const Row = ({ band }: Props) => {
-  console.log("Band: app/(application-layout)/bands/(index)/Band.tsx", band);
+  // console.log("Band: app/(application-layout)/bands/(index)/Band.tsx", band);
 
   return (
     <tr className="odd:bg-white even:bg-gray-100 hover:bg-gray-100 dark:odd:bg-gray-800 dark:even:bg-gray-700 dark:hover:bg-gray-700">

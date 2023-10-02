@@ -25,7 +25,7 @@ interface NavItemProps extends VarientType {
 }
 
 export const NavItem = ({ href, icon, title, state }: NavItemProps) => {
-  console.log(`   render: NavItem: ${title} - ${state}`);
+  // console.log(`   render: NavItem: ${title} - ${state}`);
 
   return (
     <li>
