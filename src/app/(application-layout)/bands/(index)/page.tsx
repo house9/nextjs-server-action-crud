@@ -1,29 +1,12 @@
 import { Row } from "./Row";
+import { prisma } from "@/prisma";
 
-type Band = {
-  id: number;
-  name: string;
-};
-
-export default function Page() {
+export default async function Page() {
   console.log(
     "   render: Bands: app/(application-layout)/bands/(index)/page.tsx"
   );
 
-  const bands: Band[] = [
-    { id: 1, name: "The Beatles" },
-    { id: 2, name: "The Rolling Stones" },
-    { id: 3, name: "The Who" },
-    { id: 4, name: "The Kinks" },
-    { id: 5, name: "Metallica" },
-    { id: 6, name: "The Clash" },
-    { id: 7, name: "Black Sabbath" },
-    { id: 8, name: "The Cure" },
-    { id: 9, name: "The Smiths" },
-    { id: 10, name: "The Pixies" },
-    { id: 11, name: "The Ramones" },
-    { id: 12, name: "Black Flag" },
-  ];
+  const bands = await prisma.band.findMany({ orderBy: { name: "asc" } });
 
   return (
     <>

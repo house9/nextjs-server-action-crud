@@ -1,7 +1,4 @@
-type Band = {
-  id: number;
-  name: string;
-};
+import { Band } from "@prisma/client";
 
 type Props = { band: Band };
 

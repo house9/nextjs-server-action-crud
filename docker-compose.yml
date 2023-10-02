@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15.4
+    environment:
+      - POSTGRES_USER=username_dev
+      - POSTGRES_PASSWORD=password_dev
+      - POSTGRES_DB=database_dev
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 50001:5432
+    volumes:
+      - dev_db:/var/lib/postgresql/data/pgdata
+
+volumes:
+  dev_db:
