@@ -1,6 +1,6 @@
 import { Band } from "@prisma/client";
 import { deleteBand } from "../server-actions";
-import SubmitButton from "@/app/form-components/SubmitButton";
+import SubmitButton from "@/components/SubmitButton";
 
 type BandWithCount = Band & { _count: { albums: number } };
 

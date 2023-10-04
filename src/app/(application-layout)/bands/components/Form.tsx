@@ -4,7 +4,7 @@
 import { experimental_useFormState as useFormState } from "react-dom";
 import { createBand } from "../server-actions";
 import FieldError from "./FieldError";
-import SubmitButton from "@/app/form-components/SubmitButton";
+import SubmitButton from "@/components/SubmitButton";
 
 export default function Form() {
   console.log(
