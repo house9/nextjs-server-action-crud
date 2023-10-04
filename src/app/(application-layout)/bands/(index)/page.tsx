@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Row } from "./Row";
 import { prisma } from "@/prisma";
 
@@ -13,7 +14,17 @@ export default async function Page() {
 
   return (
     <>
-      <h1 className="mb-6 text-2xl">Bands</h1>
+      <div className="flex items-center mb-6">
+        <h1 className="text-2xl">Bands</h1>
+        <div className="ml-auto">
+          <Link
+            className="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+            href="/bands/new"
+          >
+            New Band
+          </Link>
+        </div>
+      </div>
 
       <div className="flex flex-col">
         <div className="-m-1.5 overflow-x-auto">
