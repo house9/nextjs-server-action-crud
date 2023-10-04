@@ -1,7 +1,13 @@
 import Form from "../components/Form";
+import { Metadata } from "next";
 import { createBand } from "../server-actions";
 
-export default function NewBand() {
+export const metadata: Metadata = {
+  title: "New Band",
+  description: "Create new band record",
+};
+
+export default function BandNewPage() {
   console.log("  render: NewBand: app/(application-layout)/bands/new/page.tsx");
 
   return (

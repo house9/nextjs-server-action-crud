@@ -1,16 +1,20 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { Row } from "./Row";
 import { prisma } from "@/prisma";
+import { getBands } from "../data";
 
-export default async function Page() {
+export const metadata: Metadata = {
+  title: "Bands",
+  description: "List of Bands",
+};
+
+export default async function BandIndexPage() {
   console.log(
     "   render: Bands: app/(application-layout)/bands/(index)/page.tsx"
   );
 
-  const bands = await prisma.band.findMany({
-    include: { _count: { select: { albums: true } } },
-    orderBy: { name: "asc" },
-  });
+  const bands = await getBands();
 
   return (
     <>

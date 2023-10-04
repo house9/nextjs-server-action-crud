@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Icon from "@/components/Icon";
 
-export default function Home() {
+export default function HomePage() {
   console.log("  render: Home: app/(public-layout)/home/page.tsx");
   return (
     <div>

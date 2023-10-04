@@ -1,4 +1,4 @@
-export default function Dashboard() {
+export default function DashboardPage() {
   console.log(
     "  render: Dashboard: app/(application-layout)/dashboard/page.tsx"
   );
