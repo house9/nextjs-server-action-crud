@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { NavItem } from "./NavItem";
-import { Home, ArrowLeftToLine, Users2 } from "lucide-react";
+import Icon from "@/components/Icon";
 
 export const Sidebar = () => {
   const path = usePathname();
@@ -98,20 +98,20 @@ export const Sidebar = () => {
             <NavItem
               href="/dashboard"
               state={path.includes("/dashboard") ? "active" : "default"}
-              icon={<Home />}
+              icon={<Icon name="Home" />}
               title="Dashboard"
             />
             <NavItem
               href="/bands"
               title="Bands"
               state={path.includes("/bands") ? "active" : "default"}
-              icon={<Users2 />}
+              icon={<Icon name="Users2" />}
             />
             <NavItem
               href="/"
               title="Leave App"
               state="default"
-              icon={<ArrowLeftToLine />}
+              icon={<Icon name="ArrowLeftToLine" />}
             />
           </ul>
         </nav>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HomeIcon } from "lucide-react";
+import Icon from "@/components/Icon";
 
 export default function Home() {
   console.log("  render: Home: app/(public-layout)/home/page.tsx");
@@ -28,7 +28,7 @@ export default function Home() {
             <div className="lg:col-span-4">
               {/* <!-- Blockquote --> */}
               <blockquote>
-                <HomeIcon />
+                <Icon name="Home" />
 
                 <p className="text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal dark:text-gray-200">
                   Aut similique magnam quia suscipit non quisquam eos veritatis.
