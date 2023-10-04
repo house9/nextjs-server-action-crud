@@ -1,5 +1,6 @@
 "use client";
 
+import Icon from "@/components/Icon";
 import { VariantProps, cva } from "class-variance-authority";
 import { experimental_useFormStatus as useFormStatus } from "react-dom";
 
@@ -25,10 +26,27 @@ type VarientType = VariantProps<typeof variants>;
 
 interface Props extends VarientType {
   name: string;
+  displayMessage?: boolean;
 }
-export default function SubmitButton({ name, kind }: Props) {
+
+const Loading = () => (
+  <div
+    className="animate-spin inline-block w-6 h-6 border-[3px] border-current border-t-transparent text-blue-600 rounded-full"
+    role="status"
+    aria-label="loading"
+  >
+    <span className="sr-only">Loading...</span>
+  </div>
+);
+
+export default function SubmitButton({
+  name,
+  kind,
+  displayMessage = true,
+}: Props) {
   const { pending } = useFormStatus();
   const variant = pending ? "disabled" : kind;
+  const pendingMessage = displayMessage ? "Please Wait..." : " ";
 
   return (
     <button
@@ -37,7 +55,8 @@ export default function SubmitButton({ name, kind }: Props) {
       aria-disabled={pending}
       disabled={pending}
     >
-      {pending ? "Please Wait..." : name}
+      {pending ? pendingMessage : name}
+      {pending && <Loading />}
     </button>
   );
 }

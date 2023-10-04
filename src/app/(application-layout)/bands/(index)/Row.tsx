@@ -1,4 +1,6 @@
 import { Band } from "@prisma/client";
+import { deleteBand } from "../server-actions";
+import SubmitButton from "@/app/form-components/SubmitButton";
 
 type BandWithCount = Band & { _count: { albums: number } };
 
@@ -16,9 +18,10 @@ export const Row = ({ band }: Props) => {
         {band._count.albums}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-        <a className="text-blue-500 hover:text-blue-700" href="#">
-          Delete
-        </a>
+        <form action={deleteBand}>
+          <input type="hidden" name="id" value={band.id} />
+          <SubmitButton name="Delete" kind="error" displayMessage={false} />
+        </form>
       </td>
     </tr>
   );

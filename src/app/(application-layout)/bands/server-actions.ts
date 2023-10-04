@@ -32,3 +32,13 @@ export async function createBand(_prevState: any, params: FormData) {
   revalidatePath("/bands");
   redirect("/bands");
 }
+
+export async function deleteBand(params: FormData) {
+  const bandId = params.get("id") as string;
+  console.log("  deleteBand", bandId);
+
+  await prisma.band.delete({ where: { id: bandId } });
+
+  revalidatePath("/bands");
+  redirect("/bands");
+}
