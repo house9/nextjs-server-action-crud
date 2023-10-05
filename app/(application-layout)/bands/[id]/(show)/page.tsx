@@ -26,6 +26,7 @@ export default async function BandShowPage({ params: { id } }: Props) {
     <>
       <div className="flex items-center mb-6">
         <h1 className="text-3xl font-bold">Band Detail</h1>
+        <p>{band.testingThings}</p>
       </div>
 
       <div className="flex flex-col">
