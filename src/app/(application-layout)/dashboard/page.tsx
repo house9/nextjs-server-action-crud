@@ -3,11 +3,8 @@ export default function DashboardPage() {
     "  render: Dashboard: app/(application-layout)/dashboard/page.tsx"
   );
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>
-        <a href="/">Home</a>
-      </p>
+    <div className="flex items-center mb-6">
+      <h1 className="text-2xl">Dashboard</h1>
     </div>
   );
 }
