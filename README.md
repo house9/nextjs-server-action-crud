@@ -1,5 +1,16 @@
 # Application
 
+## in development
+
+```bash
+# install dependencies
+pnpm install
+# start up development postgres instance in docker
+docker compose up -d
+# run app in dev
+pnpm run dev
+```
+
 ## app directory structure
 
 ## installing preline
