@@ -4,7 +4,7 @@
 import { experimental_useFormState as useFormState } from "react-dom";
 import { createBand, updateBand } from "../server-actions";
 import SubmitButton from "@/components/SubmitButton";
-import Link from "next/link";
+import Link from "@/components/Link";
 import { Band } from "@prisma/client";
 import { TextInput } from "@/components/TextInput";
 

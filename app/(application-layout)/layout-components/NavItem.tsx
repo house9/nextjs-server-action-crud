@@ -1,5 +1,5 @@
 import { VariantProps, cva } from "class-variance-authority";
-import Link from "next/link";
+import Link from "@/components/Link";
 
 const variants = cva(
   "flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-slate-700 rounded-md hover:bg-gray-100 dark:bg-gray-900 dark:text-white",

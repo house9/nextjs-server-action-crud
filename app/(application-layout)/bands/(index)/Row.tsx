@@ -1,9 +1,9 @@
 import { Band } from "@prisma/client";
 import { deleteBand } from "../server-actions";
 import SubmitButton from "@/components/SubmitButton";
-import Link from "next/link";
+import Link from "@/components/Link";
 
-type BandWithCount = Band & { _count: { albums: number } };
+export type BandWithCount = Band & { _count: { albums: number } };
 
 type Props = { band: BandWithCount };
 

@@ -1,7 +1,6 @@
-import Link from "next/link";
+import Link from "@/components/Link";
 import { Metadata } from "next";
-import { Row } from "./Row";
-import { prisma } from "@/prisma";
+import { BandWithCount, Row } from "./Row";
 import { getBands } from "../data";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 
 export default async function BandIndexPage() {
   console.log(
-    "   render: Bands: app/(application-layout)/bands/(index)/page.tsx"
+    "  render: Bands: app/(application-layout)/bands/(index)/page.tsx"
   );
 
   const bands = await getBands();
@@ -58,7 +57,7 @@ export default async function BandIndexPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {bands.map((band) => (
+                  {bands.map((band: BandWithCount) => (
                     <Row key={band.id} band={band} />
                   ))}
                 </tbody>
