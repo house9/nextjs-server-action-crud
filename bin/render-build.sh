@@ -13,7 +13,7 @@ echo "installing dependencies"
 pnpm install
 
 echo "building"
-pnpm build
+pnpm build -- --build-mode=experimental-compile
 
 echo "run database migrations"
 pnpm prisma migrate deploy
