@@ -29,6 +29,12 @@ export const Row = ({ band }: Props) => {
         >
           Edit
         </Link>
+        <Link
+          className="ml-2 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-transparent font-semibold text-blue-500 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800"
+          href={`/bands/${band.id}`}
+        >
+          Show
+        </Link>
       </td>
     </tr>
   );

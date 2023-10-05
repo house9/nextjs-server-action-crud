@@ -29,6 +29,7 @@ export default function Form({ action, band }: Props) {
         Name:
       </label>
       <input
+        id="name"
         type="text"
         name="name"
         className="py-3 px-4 block w-full border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
@@ -36,10 +37,12 @@ export default function Form({ action, band }: Props) {
         defaultValue={band?.name}
       />
       <FieldError field="name" payload={state} />
-      <SubmitButton name={band ? "Save Changes" : "Create Band"} />
-      <Link className="ml-2 text-blue-500" href="/bands">
-        Cancel, go back
-      </Link>
+      <div className="mt-6">
+        <SubmitButton name={band ? "Save Changes" : "Create Band"} />
+        <Link className="ml-2 text-blue-500" href="/bands">
+          Cancel, go back
+        </Link>
+      </div>
       {band && <input type="hidden" name="id" value={band.id} />}
     </form>
   );
