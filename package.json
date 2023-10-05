@@ -1,5 +1,6 @@
 {
   "name": "nextjs-server-action-crud",
+  "packageManager": "pnpm@8.8.0",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,14 +23,15 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "prisma": "^5.4.1",
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }
