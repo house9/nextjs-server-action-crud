@@ -49,6 +49,8 @@ model Song {
   album Album @relation(fields: [albumId], references: [id])
   name String
   writingCredits Musician[] // implicit many-to-many
+  minutes Int @default(0)
+  seconds Int @default(0)
 }
 
 model Musician {
