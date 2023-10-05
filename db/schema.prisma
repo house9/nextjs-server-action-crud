@@ -20,6 +20,7 @@ model Band {
   albums Album[]
   members BandMember[]
 
+  testingThings String @default("testing") @map("testing_things")
 }
 
 // one-to-many Album -> Songs

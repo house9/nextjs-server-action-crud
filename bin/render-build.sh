@@ -3,17 +3,17 @@
 # exit on error
 set -o errexit
 
-echo "forcing new pnpm"
+echo "===> forcing new pnpm"
 npm install -g pnpm
 
-echo "node: $(node --version)"
-echo "pnpm: $(pnpm --version)"
+echo "===> node: $(node --version)"
+echo "===> pnpm: $(pnpm --version)"
 
-echo "installing dependencies"
+echo "===> installing dependencies"
 pnpm install
 
-echo "building"
+echo "===> building"
 pnpm build -- --build-mode=experimental-compile
 
-echo "run database migrations"
+echo "===> run database migrations"
 pnpm prisma migrate deploy
