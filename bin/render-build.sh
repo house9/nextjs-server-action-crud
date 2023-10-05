@@ -3,6 +3,9 @@
 # exit on error
 set -o errexit
 
+echo "===> remove .env file, used in development only"
+rm .env
+
 echo "===> forcing new pnpm"
 npm install -g pnpm
 
