@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ["query"] });
 
 async function main() {
   console.log("BEGIN: Seeding...");
@@ -14,7 +14,7 @@ async function main() {
 }
 
 async function seedMetallica() {
-  prisma.band.upsert({
+  await prisma.band.upsert({
     where: { name: "Metallica" },
     create: {
       name: "Metallica",
@@ -24,7 +24,7 @@ async function seedMetallica() {
 }
 
 async function seedACDC() {
-  prisma.band.upsert({
+  await prisma.band.upsert({
     where: { name: "AC/DC" },
     create: {
       name: "AC/DC",
@@ -34,7 +34,7 @@ async function seedACDC() {
 }
 
 async function seedIronMaiden() {
-  prisma.band.upsert({
+  await prisma.band.upsert({
     where: { name: "Iron Maiden" },
     create: {
       name: "Iron Maiden",
