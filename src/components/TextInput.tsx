@@ -1,3 +1,6 @@
+"use client";
+
+import { ChangeEvent, useEffect, useState } from "react";
 import FieldError from "./FieldError";
 
 type Props = {
@@ -18,9 +21,31 @@ export const TextInput = ({
   const inputCss = [
     "py-3 px-4 block w-full rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400",
   ];
-  const hasErrors = Boolean(formState.errors?.fieldErrors[inputName]);
+  const [state, setState] = useState<any>(formState);
+  const fieldError = state.errors?.fieldErrors[inputName];
 
-  if (hasErrors) {
+  useEffect(() => {
+    setState(formState);
+  }, [formState]);
+
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+
+    if (value && fieldError) {
+      setState((prevState: any) => ({
+        ...prevState,
+        errors: {
+          ...prevState.errors,
+          fieldErrors: {
+            ...prevState.errors.fieldErrors,
+            [inputName]: null,
+          },
+        },
+      }));
+    }
+  };
+
+  if (fieldError) {
     inputCss.push("border-red-500 border-2 border-solid");
   } else {
     inputCss.push("border-gray-200");
@@ -35,14 +60,15 @@ export const TextInput = ({
         {inputLabel}
       </label>
       <input
-        id={inputName}
-        type="text"
-        name={inputName}
         className={inputCss.join(" ")}
-        placeholder={inputPlaceholder}
         defaultValue={inputValue}
+        id={inputName}
+        name={inputName}
+        onChange={onChange}
+        placeholder={inputPlaceholder}
+        type="text"
       />
-      <FieldError field={inputName} payload={formState} />
+      <FieldError field={inputName} payload={state} />
     </>
   );
 };
