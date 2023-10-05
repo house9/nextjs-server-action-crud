@@ -15,8 +15,11 @@ echo "===> pnpm: $(pnpm --version)"
 echo "===> installing dependencies"
 pnpm install
 
-echo "===> building"
+echo "===> building nextjs app"
 pnpm build -- --build-mode=experimental-compile
+
+echo "===> generating prisma client"
+pnpm prisma generate
 
 echo "===> run database migrations"
 pnpm prisma migrate deploy
