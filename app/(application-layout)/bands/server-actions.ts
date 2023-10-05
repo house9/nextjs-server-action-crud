@@ -2,7 +2,7 @@
 
 import type { Prisma } from "@prisma/client";
 import z from "zod";
-import { prisma } from "@/prisma";
+import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { safeParse } from "@/lib/params";
