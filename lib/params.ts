@@ -1,13 +1,15 @@
 import z from "zod";
+import { getLogger } from "@/lib/logger";
 
 type SchemaType = z.ZodObject<any, any>;
 
 export const safeParse = (schema: SchemaType, params: FormData) => {
+  const logger = getLogger({});
   const args = Object.fromEntries(params.entries());
-  console.log("params(raw)", args);
+  logger.debug("params(raw)", args);
 
   const payload = schema.safeParse(args);
-  console.log("params(parsed)", payload);
+  logger.debug("params(parsed)", payload);
 
   if (!payload.success) {
     const rawError = payload.error;

@@ -4,11 +4,11 @@ type Props = {
 };
 
 export default function FieldError({ field, payload }: Props) {
-  console.log(
-    "  render: FieldError: src/components/FieldError.tsx",
-    field,
-    payload.errors
-  );
+  // console.log(
+  //   "  render: FieldError: src/components/FieldError.tsx",
+  //   field,
+  //   payload.errors
+  // );
   if (!payload.errors) return null;
 
   const errors = payload.errors.fieldErrors[field];

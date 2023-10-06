@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Header } from "./layout-components/Header";
 import { Sidebar } from "./layout-components/Sidebar";
+import { getLogger } from "@/lib/logger";
 
 export const metadata: Metadata = {
   title: "App",
@@ -11,9 +12,8 @@ export default function ApplicationLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log(
-    "  render: ApplicationLayout: app/(application-layout)/layout.tsx"
-  );
+  const logger = getLogger({});
+  logger.debug("render: app/(application-layout)/layout.tsx");
 
   return (
     <>

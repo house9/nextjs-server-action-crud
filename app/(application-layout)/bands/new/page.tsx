@@ -1,6 +1,7 @@
 import Form from "../components/Form";
 import { Metadata } from "next";
 import { createBand } from "../server-actions";
+import { getLogger } from "@/lib/logger";
 
 export const metadata: Metadata = {
   title: "New Band",
@@ -8,7 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default function BandNewPage() {
-  console.log("  render: NewBand: app/(application-layout)/bands/new/page.tsx");
+  const logger = getLogger({});
+  logger.debug("render: app/(application-layout)/bands/new/page.tsx");
 
   return (
     <>

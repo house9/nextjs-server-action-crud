@@ -1,5 +1,6 @@
 import Link from "@/components/Link";
 import { getBand } from "../../data";
+import { getLogger } from "@/lib/logger";
 
 type Props = {
   params: {
@@ -16,8 +17,9 @@ export const generateMetadata = async ({ params: { id } }: Props) => {
 };
 
 export default async function BandShowPage({ params: { id } }: Props) {
-  console.log(
-    `  render: EditBand: app/(application-layout)/bands/[id]/(show)/page.tsx, ${id}`
+  const logger = getLogger({});
+  logger.debug(
+    `render: app/(application-layout)/bands/[id]/(show)/page.tsx, ${id}`
   );
 
   const band = await getBand(id);

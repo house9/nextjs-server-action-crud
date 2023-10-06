@@ -1,6 +1,7 @@
 import Form from "../../components/Form";
 import { getBand } from "../../data";
 import { updateBand } from "../../server-actions";
+import { getLogger } from "@/lib/logger";
 
 type Props = {
   params: {
@@ -17,8 +18,9 @@ export const generateMetadata = async ({ params: { id } }: Props) => {
 };
 
 export default async function BandEditPage({ params: { id } }: Props) {
-  console.log(
-    `  render: EditBand: app/(application-layout)/bands/[id]/edit/page.tsx, ${id}`
+  const logger = getLogger({});
+  logger.debug(
+    `render: app/(application-layout)/bands/[id]/edit/page.tsx, ${id}`
   );
 
   const band = await getBand(id);

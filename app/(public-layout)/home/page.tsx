@@ -1,8 +1,11 @@
 import Link from "@/components/Link";
 import Icon from "@/components/Icon";
+import { getLogger } from "@/lib/logger";
 
 export default function HomePage() {
-  console.log("  render: Home: app/(public-layout)/home/page.tsx");
+  const logger = getLogger({});
+  logger.debug("render: app/(public-layout)/home/page.tsx");
+
   return (
     <div>
       {/* <!-- Testimonials --> */}

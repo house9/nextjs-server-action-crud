@@ -2,6 +2,7 @@ import Link from "@/components/Link";
 import { Metadata } from "next";
 import { BandWithCount, Row } from "./Row";
 import { getBands } from "../data";
+import { getLogger } from "@/lib/logger";
 
 export const metadata: Metadata = {
   title: "Bands",
@@ -9,9 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default async function BandIndexPage() {
-  console.log(
-    "  render: Bands: app/(application-layout)/bands/(index)/page.tsx"
-  );
+  const logger = getLogger({});
+  logger.debug("render: app/(application-layout)/bands/(index)/page.tsx");
 
   const bands = await getBands();
 

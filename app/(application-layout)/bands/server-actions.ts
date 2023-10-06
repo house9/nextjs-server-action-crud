@@ -6,6 +6,7 @@ import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { safeParse } from "@/lib/params";
+import { getLogger } from "@/lib/logger";
 
 const createSchema = z.object({
   name: z
@@ -18,8 +19,8 @@ const updateSchema = createSchema.extend({
 });
 
 export async function createBand(_prevState: any, params: FormData) {
+  const logger = getLogger({});
   const { success, error, data } = safeParse(createSchema, params);
-  console.log("  createBand", { success, error, data });
 
   if (!success) {
     return {
@@ -31,15 +32,15 @@ export async function createBand(_prevState: any, params: FormData) {
 
   const input = data as Prisma.BandCreateInput;
   const band = await prisma.band.create({ data: input });
-  console.log("  createBand", band.id);
+  logger.debug(`createBand: ${band.id}`);
 
   revalidatePath("/bands");
   redirect("/bands");
 }
 
 export async function updateBand(_prevState: any, params: FormData) {
+  const logger = getLogger({});
   const { success, error, data } = safeParse(updateSchema, params);
-  console.log("  updateBand", { success, error, data });
 
   if (!success) {
     return {
@@ -54,15 +55,16 @@ export async function updateBand(_prevState: any, params: FormData) {
     where: { id: input.id },
     data: input,
   });
-  console.log("  updateBand", band.id);
+  logger.debug(`updateBand: ${band.id}`);
 
   revalidatePath("/bands");
   redirect("/bands");
 }
 
 export async function deleteBand(params: FormData) {
+  const logger = getLogger({});
   const bandId = params.get("id") as string;
-  console.log("  deleteBand", bandId);
+  logger.debug(`deleteBand: ${bandId}`);
 
   await prisma.band.delete({ where: { id: bandId } });
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getLogger } from "@/lib/logger";
 
 export const metadata: Metadata = {
   title: "Public",
@@ -9,7 +10,8 @@ export default function PublicLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("  render: PublicLayout: app/(public-layout)/layout.tsx");
+  const logger = getLogger({});
+  logger.debug("render: app/(public-layout)/layout.tsx");
 
   return <body>{children}</body>;
 }
