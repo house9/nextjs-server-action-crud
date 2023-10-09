@@ -108,6 +108,12 @@ export const Sidebar = () => {
               icon={<Icon name="Users2" />}
             />
             <NavItem
+              href="/albums"
+              title="Albums"
+              state={path.includes("/albums") ? "active" : "default"}
+              icon={<Icon name="Disc" />}
+            />
+            <NavItem
               href="/"
               title="Leave App"
               state="default"
