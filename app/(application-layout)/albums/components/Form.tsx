@@ -11,7 +11,7 @@ import FieldError from "@/components/FieldError";
 
 type Props = {
   action: typeof createAlbum | typeof updateAlbum;
-  bandId?: string;
+  bandId?: string | undefined;
   bands?: Band[];
   album?: Album & { band: Band };
 };

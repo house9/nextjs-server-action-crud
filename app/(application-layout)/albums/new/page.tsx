@@ -5,7 +5,7 @@ import { getLogger } from "@/lib/logger";
 import { getBands } from "../../bands/data";
 
 type Props = {
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: { [key: string]: string | undefined };
 };
 
 export const metadata: Metadata = {

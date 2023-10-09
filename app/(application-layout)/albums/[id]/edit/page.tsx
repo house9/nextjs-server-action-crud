@@ -17,11 +17,7 @@ export const generateMetadata = async ({ params: { id } }: Props) => {
   };
 };
 
-export default async function AlbumEditPage({
-  params: { id },
-  searchParams,
-}: Props) {
-  const bandId = searchParams?.bandId;
+export default async function AlbumEditPage({ params: { id } }: Props) {
   const logger = getLogger({});
   logger.debug(
     `render: app/(application-layout)/albums/[id]/edit/page.tsx, ${id}`
