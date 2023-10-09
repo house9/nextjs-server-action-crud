@@ -1,8 +1,14 @@
-import { icons, LucideIcon as LucideIconType } from "lucide-react";
+import { icons } from "lucide-react";
 
 type Props = {
-  /** Name of the icon, must match one of: https://lucide.dev/icons/ */
-  name: string;
+  /**
+   * Name of the icon, must match one of: https://lucide.dev/icons/
+   *
+   * Use the component name
+   *
+   * i.e. for the `arrow-down-z-a` icon use `name="ArrowDownZA"`
+   */
+  name: keyof typeof icons;
   /** Color of the icon, default currentColor */
   color?: string;
   /** Size of the icon, default is 24 */
@@ -16,9 +22,7 @@ type Props = {
 /**
  * Wrapper around lucide-react icons component
  *
- * See: https://lucide.dev/guide/packages/lucide-react for more info
- *
- * TODO: error boundary for invalid icon name
+ * See: https://lucide.dev/guide/packages/lucide-react for more information
  */
 const Icon = ({
   name,
@@ -27,7 +31,7 @@ const Icon = ({
   strokeWidth,
   absoluteStrokeWidth,
 }: Props) => {
-  const LucideIcon = icons[name as keyof typeof icons] as LucideIconType;
+  const LucideIcon = icons[name];
 
   return (
     <LucideIcon
