@@ -11,11 +11,12 @@ import FieldError from "@/components/FieldError";
 
 type Props = {
   action: typeof createAlbum | typeof updateAlbum;
+  bandId?: string;
   bands?: Band[];
   album?: Album & { band: Band };
 };
 
-export default function Form({ action, bands, album }: Props) {
+export default function Form({ action, bandId, bands, album }: Props) {
   console.log(
     "  render: Form: app/(application-layout)/albums/components/Form.tsx"
   );
@@ -36,6 +37,7 @@ export default function Form({ action, bands, album }: Props) {
             name="bandId"
             id="bandId"
             className="py-3 px-4 block w-full rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400"
+            defaultValue={bandId}
           >
             <option value="">Select a band</option>
             {(bands || []).map((band) => (
