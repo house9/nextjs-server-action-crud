@@ -16,3 +16,5 @@ services:
         fromDatabase:
           name: next_crud_database
           property: connectionString
+      - key: NODE_VERSION
+        value: 20.8.1
