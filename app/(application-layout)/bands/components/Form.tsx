@@ -1,7 +1,7 @@
 "use client";
 
 // @ts-ignore
-import { experimental_useFormState as useFormState } from "react-dom";
+import { useFormState } from "react-dom";
 import { createBand, updateBand } from "../server-actions";
 import SubmitButton from "@/components/SubmitButton";
 import Link from "@/components/Link";

@@ -38,6 +38,9 @@ pnpm prisma migrate dev --name new_migration_filename
 # run seeds
 pnpm prisma db seed
 
+# rebuild dev and run seeds
+pnpm prisma migrate reset
+
 # run migration files in production
 pnpm prisma migrate deploy
 ```
